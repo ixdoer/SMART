@@ -1,0 +1,1 @@
+<view class="content"><image class="logo" src="/static/images/logo.jpg"></image><view class="text-area"><text class="title">{{title}}</text></view><view><input class="devid" placeholder="请输入您的设备ID"/></view><view class="line"></view><view class="btn"><button size="default" type="primary">确 定</button></view></view>

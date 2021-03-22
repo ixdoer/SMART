@@ -1,0 +1,24 @@
+
+.content {
+	text-align: center;
+	margin-top: 200rpx;
+	margin-bottom: 100rpx;
+}
+.logo {
+	height:200rpx;
+	width: 200rpx;
+}
+.line {
+	width: 70%;
+	height: 1px;		
+	background-color: #cccccc;
+	margin: 1px auto;
+}
+.devid{
+	margin-top: 150rpx;
+}
+.btn{
+	width: 200rpx;		
+	margin: 30rpx auto;
+}
+

@@ -1,0 +1,28 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "请登录"
+			}
+		},{
+			"path": "pages/control/control",
+			"style": {
+				"navigationBarTitleText": "请操作",
+				"enablePullDownRefresh": true
+			}
+		},{
+			"path": "pages/chat/chat",
+			"style": {
+				"navigationBarTitleText": "聊天窗",
+				"enablePullDownRefresh": true
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}

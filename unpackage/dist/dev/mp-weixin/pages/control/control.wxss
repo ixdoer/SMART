@@ -1,0 +1,58 @@
+
+page{
+	background-color: #efeeee;
+}
+.box {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-justify-content: space-around;
+                    justify-content: space-around;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+                    align-items: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+                    flex-direction: column;
+            width: 100px;
+            height: 140px;
+            margin: 200px auto;
+            cursor: pointer;
+}
+.img {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+                    align-items: center;
+            width: 90px;
+            height: 100px;
+            -webkit-border-radius: 20px;
+                    border-radius: 20px;
+            -webkit-box-shadow: 18px 18px 30px rgba(0, 0, 0, 0.2), -18px -18px 30px rgba(255, 255, 255, 1);
+                    box-shadow: 18px 18px 30px rgba(0, 0, 0, 0.2), -18px -18px 30px rgba(255, 255, 255, 1);
+            -webkit-transition: all 0.2s ease-out;
+            transition: all 0.2s ease-out;
+}
+image {
+            width: 60px;
+			height: 60px;
+            -webkit-transition: all 0.2s ease-out;
+            transition: all 0.2s ease-out;
+}
+._p {
+            color: slategray;
+}
+.img:hover {
+            -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 rgba(255, 255, 255, 0.8), inset 18px 18px 30px rgba(0, 0, 0, 0.1), inset -18px -18px 30px rgba(255, 255, 255, 1);
+                    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 rgba(255, 255, 255, 0.8), inset 18px 18px 30px rgba(0, 0, 0, 0.1), inset -18px -18px 30px rgba(255, 255, 255, 1);
+}
+.img:hover image {
+            width: 58px;
+}
+

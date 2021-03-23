@@ -12,7 +12,7 @@
 					<text class="t2"></text>
 				</view>
 				<view class="term">
-					温度: {{termperature}}'C 湿度: {{humidity}}%
+					温度: {{Temp}}'C 湿度: {{Hum}}%
 				</view>
 			</view>
 		</view>
@@ -38,21 +38,21 @@
 				<text></text>
 			</view>
 
-			<view class="key">
+			<view class="key" @tap="led_on()">
 				<view class="img" hover-class="imgpress">
 					<image src='../../static/images/left.png'></image>
 				</view>
 				<text></text>
 			</view>
 
-			<view class="key" @tap="ledSwitch()">
+			<view class="key" @tap="">
 				<view class="img" hover-class="imgpress">
 					<image src='../../static/images/on-off.png'></image>
 				</view>
 				<text>开关</text>
 			</view>
 
-			<view class="key">
+			<view class="key" @tap="led_off()">
 				<view class="img" hover-class="imgpress">
 					<image src='../../static/images/right.png'></image>
 				</view>
@@ -84,18 +84,24 @@
 
 </template>
 
-<script>
+<script>		
 	export default {
 		data() {
 			return {
 				//时间
 				time: null,
-				//温度
-				termperature: null,
-				humidity: null
+				
+				client: {},
+				Temp:0,
+				Hum:0,
+				Light:0,
+				Led:false,
+				Beep:false
 			}
 		},
 		onLoad: function(e) {
+			let that = this;
+			//获取时间
 			setInterval(() => {
 				let date = new Date();
 				let hours = date.getHours();
@@ -117,70 +123,83 @@
 				}
 				this.time = hours + ":" + minutes + ":" + seconds + " " + day_night;
 			}, 200);
-			getInfo();
-
-		},
-		onPullDownRefresh() {
-			console.log('refresh');
-			setTimeout(function() {
-				uni.stopPullDownRefresh();
-			}, 1000);
-			this.getInfo();
-		},
+			//连接mqtt
+			this.connect();
+		},				
 		methods: {
-			//获取温湿度
-			getInfo() {
-				uni.showLoading({
-					title: '数据加载中...',
-					mask: false
-				});
-				uni.request({
-					url: this.globalVar.default_url.test,
-					method: 'POST',
-					data: {
-						test: this.test
-					},
-					success: res => {
-						console.log(res);
-						if (200 == res.statusCode) {
-							this.devinfo = JSON.stringify(res.data);
-							if (undefined == res.data.error_code) {
-								this.userinfo = res.data.services[0].data.infostring;
-								let val = JSON.parse(this.userinfo);
-								this.termperature = val.T;
-								this.humidity = val.H;
-
-								console.log("温度: " + val.T + "C" + " 湿度: " + val.H + "%");
-							}
-
+			connect() {
+				let self = this
+				let subscribe = "test"
+				let mqtt = require('mqtt/dist/mqtt.js')
+				// #ifdef H5  
+				let options = {
+					clientId: "H5_test",
+					connectTimeout: 600000,
+					clean: true
+				}
+				self.client = mqtt.connect('ws://idoer.top:8083/mqtt', options)
+				// #endif  
+				// #ifdef MP-WEIXIN||APP-PLUS  
+				let options = {
+					clientId: "APP_test",
+					connectTimeout: 600000,
+					clean: true
+				}
+				self.client = mqtt.connect('ws://idoer.top:8083/mqtt', options)
+				// #endif 
+			
+				self.client.on('connect', function(res) {
+					uni.showToast({
+						title: "连接成功",
+						duration: 2000,
+						icon: "none"
+					})
+					self.client.subscribe(subscribe, function(err) {
+						if (!err) {
+							uni.showToast({
+								title: "订阅成功",
+								duration: 2000,
+								icon: "none"
+							})
 						}
-					},
-					fail: () => {},
-					complete: () => {
-						uni.hideLoading();
-					}
-				});
+					})
+					//toppic是字符串，message是16进制字节流
+				}).on('message', function(topic, message) {
+					let msg=JSON.parse(message.toString());
+					console.log(msg);
+					self.Temp=msg.Temp;
+					self.Hum=msg.Hum;
+					self.Light=msg.Light;
+					self.Led=msg.Led;
+					self.Beep=msg.Beep;					
+				}).on('reconnect', function(topic, message) {
+					console.log("重连")
+				})
 			},
-
+			
 			//控制开关
-			ledSwitch() {
-				uni.request({
-					url: this.globalVar.default_url.led,
-					method: 'POST',
-					data: {
-						led: 1
-					},
-					success: res => {
-						uni.showToast({
-							title: res.data,
-							icon: "none"
-						});
-						console.log(res.data);
-					},
-					fail: () => {
-						console.log("服务器异常!!!");
-					}					
+			led_on() {
+				let self=this;
+				let qtt = {}; //定义消息（可以为字符串，对象等）	
+				qtt.LED_SW = 1;
+				//qtt.cmd = 1;
+				self.client.publish('ctrl', JSON.stringify(qtt), {
+					qos: 0,
+					retain: true
 				});
+				console.log("开灯");
+			},
+			//控制开关
+			led_off() {
+				let self=this;
+				let qtt = {}; //定义消息（可以为字符串，对象等）	
+				qtt.LED_SW = 0;
+				//qtt.cmd = 0;
+				self.client.publish('ctrl', JSON.stringify(qtt), {
+					qos: 0,
+					retain: true
+				});
+				console.log("关灯");
 			}
 		}
 	}

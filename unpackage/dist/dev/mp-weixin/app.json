@@ -1,7 +1,8 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/control/control",
-    "pages/login/login"
+    "pages/chat/chat"
   ],
   "subPackages": [],
   "window": {

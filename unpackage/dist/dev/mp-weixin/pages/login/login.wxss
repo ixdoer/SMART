@@ -1,24 +1,81 @@
 
 .content {
-	text-align: center;
-	margin-top: 200rpx;
-	margin-bottom: 100rpx;
+	background: #377EB4;
+	width: 100vw;
+	height: 100vh;
 }
-.logo {
-	height:200rpx;
+.avatorWrapper {
+	height: 40vh;
+	width: 100vw;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+}
+.avator {
 	width: 200rpx;
+	height: 200rpx;
+	overflow: hidden;
+	border-radius: 35rpx;
 }
-.line {
-	width: 70%;
-	height: 1px;		
-	background-color: #cccccc;
-	margin: 1px auto;
+.avator .img {
+	width: 100%
 }
-.devid{
-	margin-top: 150rpx;
+#appname {
+	color: #ffaa00;
+	font-size: 45rpx;
 }
-.btn{
-	width: 200rpx;		
-	margin: 30rpx auto;
+.form {
+	padding: 0 100rpx;
+	margin-top: 25px;
+}
+.inputWrapper {
+	width: 100%;
+	height: 80rpx;
+	background: white;
+	border-radius: 20px;
+	box-sizing: border-box;
+	padding: 0 20px;
+	margin-top: 25px;
+}
+.inputWrapper .input {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	font-size: 15px;
+}
+.loginBtn {
+	width: 100%;
+	height: 80rpx;
+	background: #77B307;
+	border-radius: 50rpx;
+	margin-top: 50px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.loginBtn .btnValue {
+	color: white;
+}
+.forgotBtn {
+	text-align: center;
+	color: #EAF6F9;
+	font-size: 15px;
+	margin-top: 20px;
 }
 

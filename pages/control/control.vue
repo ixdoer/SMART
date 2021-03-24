@@ -38,21 +38,21 @@
 				<text></text>
 			</view>
 
-			<view class="key" @tap="led_on()">
+			<view class="key" @click="led_on()">
 				<view class="img" hover-class="imgpress">
 					<image src='../../static/images/left.png'></image>
 				</view>
 				<text></text>
 			</view>
 
-			<view class="key" @tap="">
+			<view class="key" @click="">
 				<view class="img" hover-class="imgpress">
 					<image src='../../static/images/on-off.png'></image>
 				</view>
 				<text>开关</text>
 			</view>
 
-			<view class="key" @tap="led_off()">
+			<view class="key" @click="led_off()">
 				<view class="img" hover-class="imgpress">
 					<image src='../../static/images/right.png'></image>
 				</view>
@@ -137,7 +137,7 @@
 					connectTimeout: 600000,
 					clean: true
 				}
-				self.client = mqtt.connect('ws://idoer.top:8083/mqtt', options)
+				self.client = mqtt.connect('wss://idoer.top:8084/mqtt', options)
 				// #endif  
 				// #ifdef MP-WEIXIN||APP-PLUS  
 				let options = {
@@ -145,7 +145,7 @@
 					connectTimeout: 600000,
 					clean: true
 				}
-				self.client = mqtt.connect('ws://idoer.top:8083/mqtt', options)
+				self.client = mqtt.connect('wxs://idoer.top:8084/mqtt', options)
 				// #endif 
 			
 				self.client.on('connect', function(res) {

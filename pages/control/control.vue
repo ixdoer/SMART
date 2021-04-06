@@ -7,12 +7,13 @@
 						<view id="time">
 							{{time}}
 						</view>
-					</view>
-					<text class="t1"></text>
-					<text class="t2"></text>
+					</view>					
 				</view>
 				<view class="term">
-					温度: {{Temp}}'C 湿度: {{Hum}}%
+					光照度: {{Light}}%
+				</view>
+				<view class="term">
+					温度: {{Temp}}'C 湿度: {{Humi}}%
 				</view>
 			</view>
 		</view>
@@ -93,7 +94,7 @@
 				
 				client: {},
 				Temp:0,
-				Hum:0,
+				Humi:0,
 				Light:0,
 				Led:false,
 				Beep:false
@@ -129,7 +130,7 @@
 		methods: {
 			connect() {
 				let self = this
-				let subscribe = "test"
+				let subscribe = "data"
 				let mqtt = require('mqtt/dist/mqtt.js')
 				// #ifdef H5  
 				let options = {
@@ -149,11 +150,7 @@
 				// #endif 
 			
 				self.client.on('connect', function(res) {
-					uni.showToast({
-						title: "连接成功",
-						duration: 2000,
-						icon: "none"
-					})
+					console.log("服务器连接成功！")
 					self.client.subscribe(subscribe, function(err) {
 						if (!err) {
 							uni.showToast({
@@ -163,12 +160,12 @@
 							})
 						}
 					})
-					//toppic是字符串，message是16进制字节流
+					//topic是字符串，message是16进制字节流
 				}).on('message', function(topic, message) {
 					let msg=JSON.parse(message.toString());
 					console.log(msg);
 					self.Temp=msg.Temp;
-					self.Hum=msg.Hum;
+					self.Humi=msg.Humi;
 					self.Light=msg.Light;
 					self.Led=msg.Led;
 					self.Beep=msg.Beep;					

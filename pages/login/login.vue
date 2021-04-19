@@ -51,10 +51,9 @@
 						icon: "none"
 					});
 					setTimeout(() => {
-						uni.redirectTo({
+						uni.switchTab({
 							url: "../control/control"
-						});
-						N
+						});						
 					}, 1000);
 					uni.setStorageSync("userName", this.userName);
 					uni.setStorageSync("passWord", this.passWord);

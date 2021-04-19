@@ -100,8 +100,7 @@
 				Beep:false
 			}
 		},
-		onLoad: function(e) {
-			let that = this;
+		onShow: function(e) {			
 			//获取时间
 			setInterval(() => {
 				let date = new Date();
@@ -202,11 +201,7 @@
 	}
 </script>
 
-<style>
-	page {
-		background-color: #efeeee;
-	}
-
+<style>	
 	.screenBorder {
 		background-color: #14FFE9;
 		display: flex;

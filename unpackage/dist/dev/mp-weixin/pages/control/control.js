@@ -216,6 +216,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 var _default =
 {
   data: function data() {
@@ -225,14 +226,13 @@ var _default =
 
       client: {},
       Temp: 0,
-      Hum: 0,
+      Humi: 0,
       Light: 0,
       Led: false,
       Beep: false };
 
   },
   onLoad: function onLoad(e) {var _this = this;
-    var that = this;
     //获取时间
     setInterval(function () {
       var date = new Date();
@@ -261,7 +261,7 @@ var _default =
   methods: {
     connect: function connect() {
       var self = this;
-      var subscribe = "test";
+      var subscribe = "data";
       var mqtt = __webpack_require__(/*! mqtt/dist/mqtt.js */ 25);
 
 
@@ -277,15 +277,11 @@ var _default =
         connectTimeout: 600000,
         clean: true };
 
-      self.client = mqtt.connect('mqtt://idoer.top:8084/mqtt', options);
+      self.client = mqtt.connect('wxs://idoer.top:8084/mqtt', options);
 
 
       self.client.on('connect', function (res) {
-        uni.showToast({
-          title: "连接成功",
-          duration: 2000,
-          icon: "none" });
-
+        console.log("服务器连接成功！");
         self.client.subscribe(subscribe, function (err) {
           if (!err) {
             uni.showToast({
@@ -295,12 +291,12 @@ var _default =
 
           }
         });
-        //toppic是字符串，message是16进制字节流
+        //topic是字符串，message是16进制字节流
       }).on('message', function (topic, message) {
         var msg = JSON.parse(message.toString());
         console.log(msg);
         self.Temp = msg.Temp;
-        self.Hum = msg.Hum;
+        self.Humi = msg.Humi;
         self.Light = msg.Light;
         self.Led = msg.Led;
         self.Beep = msg.Beep;

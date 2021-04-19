@@ -1067,27 +1067,24 @@ var render = function() {
                       ])
                     ],
                     1
-                  ),
-                  _c("v-uni-text", {
-                    staticClass: _vm._$g(6, "sc"),
-                    attrs: { _i: 6 }
-                  }),
-                  _c("v-uni-text", {
-                    staticClass: _vm._$g(7, "sc"),
-                    attrs: { _i: 7 }
-                  })
+                  )
                 ],
                 1
               ),
               _c(
                 "v-uni-view",
-                { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } },
+                { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
+                [_vm._v("光照度: " + _vm._$g(6, "t0-0") + "%")]
+              ),
+              _c(
+                "v-uni-view",
+                { staticClass: _vm._$g(7, "sc"), attrs: { _i: 7 } },
                 [
                   _vm._v(
                     "温度: " +
-                      _vm._$g(8, "t0-0") +
+                      _vm._$g(7, "t0-0") +
                       "'C 湿度: " +
-                      _vm._$g(8, "t0-1") +
+                      _vm._$g(7, "t0-1") +
                       "%"
                   )
                 ]
@@ -1100,68 +1097,68 @@ var render = function() {
       ),
       _c(
         "v-uni-view",
-        { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
+        { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } },
         [
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } },
+            { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
             [
               _c(
                 "v-uni-view",
                 {
-                  staticClass: _vm._$g(11, "sc"),
-                  attrs: { "hover-class": "imgpress", _i: 11 }
+                  staticClass: _vm._$g(10, "sc"),
+                  attrs: { "hover-class": "imgpress", _i: 10 }
                 },
-                [_c("v-uni-image", { attrs: { src: "", _i: 12 } })],
+                [_c("v-uni-image", { attrs: { src: "", _i: 11 } })],
                 1
               ),
-              _c("v-uni-text", { attrs: { _i: 13 } })
+              _c("v-uni-text", { attrs: { _i: 12 } })
             ],
             1
           ),
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
+            { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } },
             [
               _c(
                 "v-uni-view",
                 {
-                  staticClass: _vm._$g(15, "sc"),
-                  attrs: { "hover-class": "imgpress", _i: 15 }
+                  staticClass: _vm._$g(14, "sc"),
+                  attrs: { "hover-class": "imgpress", _i: 14 }
                 },
                 [
                   _c("v-uni-image", {
-                    attrs: { src: _vm._$g(16, "a-src"), _i: 16 }
+                    attrs: { src: _vm._$g(15, "a-src"), _i: 15 }
                   })
                 ],
                 1
               ),
-              _c("v-uni-text", { attrs: { _i: 17 } })
+              _c("v-uni-text", { attrs: { _i: 16 } })
             ],
             1
           ),
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(18, "sc"), attrs: { _i: 18 } },
+            { staticClass: _vm._$g(17, "sc"), attrs: { _i: 17 } },
             [
               _c(
                 "v-uni-view",
                 {
-                  staticClass: _vm._$g(19, "sc"),
-                  attrs: { "hover-class": "imgpress", _i: 19 }
+                  staticClass: _vm._$g(18, "sc"),
+                  attrs: { "hover-class": "imgpress", _i: 18 }
                 },
-                [_c("v-uni-image", { attrs: { src: "", _i: 20 } })],
+                [_c("v-uni-image", { attrs: { src: "", _i: 19 } })],
                 1
               ),
-              _c("v-uni-text", { attrs: { _i: 21 } })
+              _c("v-uni-text", { attrs: { _i: 20 } })
             ],
             1
           ),
           _c(
             "v-uni-view",
             {
-              staticClass: _vm._$g(22, "sc"),
-              attrs: { _i: 22 },
+              staticClass: _vm._$g(21, "sc"),
+              attrs: { _i: 21 },
               on: {
                 click: function($event) {
                   return _vm.$handleViewEvent($event)
@@ -1172,25 +1169,25 @@ var render = function() {
               _c(
                 "v-uni-view",
                 {
-                  staticClass: _vm._$g(23, "sc"),
-                  attrs: { "hover-class": "imgpress", _i: 23 }
+                  staticClass: _vm._$g(22, "sc"),
+                  attrs: { "hover-class": "imgpress", _i: 22 }
                 },
                 [
                   _c("v-uni-image", {
-                    attrs: { src: _vm._$g(24, "a-src"), _i: 24 }
+                    attrs: { src: _vm._$g(23, "a-src"), _i: 23 }
                   })
                 ],
                 1
               ),
-              _c("v-uni-text", { attrs: { _i: 25 } })
+              _c("v-uni-text", { attrs: { _i: 24 } })
             ],
             1
           ),
           _c(
             "v-uni-view",
             {
-              staticClass: _vm._$g(26, "sc"),
-              attrs: { _i: 26 },
+              staticClass: _vm._$g(25, "sc"),
+              attrs: { _i: 25 },
               on: {
                 click: function($event) {
                   return _vm.$handleViewEvent($event)
@@ -1201,25 +1198,25 @@ var render = function() {
               _c(
                 "v-uni-view",
                 {
-                  staticClass: _vm._$g(27, "sc"),
-                  attrs: { "hover-class": "imgpress", _i: 27 }
+                  staticClass: _vm._$g(26, "sc"),
+                  attrs: { "hover-class": "imgpress", _i: 26 }
                 },
                 [
                   _c("v-uni-image", {
-                    attrs: { src: _vm._$g(28, "a-src"), _i: 28 }
+                    attrs: { src: _vm._$g(27, "a-src"), _i: 27 }
                   })
                 ],
                 1
               ),
-              _c("v-uni-text", { attrs: { _i: 29 } }, [_vm._v("开关")])
+              _c("v-uni-text", { attrs: { _i: 28 } }, [_vm._v("开关")])
             ],
             1
           ),
           _c(
             "v-uni-view",
             {
-              staticClass: _vm._$g(30, "sc"),
-              attrs: { _i: 30 },
+              staticClass: _vm._$g(29, "sc"),
+              attrs: { _i: 29 },
               on: {
                 click: function($event) {
                   return _vm.$handleViewEvent($event)
@@ -1230,72 +1227,72 @@ var render = function() {
               _c(
                 "v-uni-view",
                 {
-                  staticClass: _vm._$g(31, "sc"),
-                  attrs: { "hover-class": "imgpress", _i: 31 }
+                  staticClass: _vm._$g(30, "sc"),
+                  attrs: { "hover-class": "imgpress", _i: 30 }
                 },
                 [
                   _c("v-uni-image", {
-                    attrs: { src: _vm._$g(32, "a-src"), _i: 32 }
+                    attrs: { src: _vm._$g(31, "a-src"), _i: 31 }
                   })
                 ],
                 1
               ),
-              _c("v-uni-text", { attrs: { _i: 33 } })
+              _c("v-uni-text", { attrs: { _i: 32 } })
             ],
             1
           ),
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(34, "sc"), attrs: { _i: 34 } },
+            { staticClass: _vm._$g(33, "sc"), attrs: { _i: 33 } },
             [
               _c(
                 "v-uni-view",
                 {
-                  staticClass: _vm._$g(35, "sc"),
-                  attrs: { "hover-class": "imgpress", _i: 35 }
+                  staticClass: _vm._$g(34, "sc"),
+                  attrs: { "hover-class": "imgpress", _i: 34 }
                 },
-                [_c("v-uni-image", { attrs: { src: "", _i: 36 } })],
+                [_c("v-uni-image", { attrs: { src: "", _i: 35 } })],
                 1
               ),
-              _c("v-uni-text", { attrs: { _i: 37 } })
+              _c("v-uni-text", { attrs: { _i: 36 } })
             ],
             1
           ),
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(38, "sc"), attrs: { _i: 38 } },
+            { staticClass: _vm._$g(37, "sc"), attrs: { _i: 37 } },
             [
               _c(
                 "v-uni-view",
                 {
-                  staticClass: _vm._$g(39, "sc"),
-                  attrs: { "hover-class": "imgpress", _i: 39 }
+                  staticClass: _vm._$g(38, "sc"),
+                  attrs: { "hover-class": "imgpress", _i: 38 }
                 },
                 [
                   _c("v-uni-image", {
-                    attrs: { src: _vm._$g(40, "a-src"), _i: 40 }
+                    attrs: { src: _vm._$g(39, "a-src"), _i: 39 }
                   })
                 ],
                 1
               ),
-              _c("v-uni-text", { attrs: { _i: 41 } })
+              _c("v-uni-text", { attrs: { _i: 40 } })
             ],
             1
           ),
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(42, "sc"), attrs: { _i: 42 } },
+            { staticClass: _vm._$g(41, "sc"), attrs: { _i: 41 } },
             [
               _c(
                 "v-uni-view",
                 {
-                  staticClass: _vm._$g(43, "sc"),
-                  attrs: { "hover-class": "imgpress", _i: 43 }
+                  staticClass: _vm._$g(42, "sc"),
+                  attrs: { "hover-class": "imgpress", _i: 42 }
                 },
-                [_c("v-uni-image", { attrs: { src: "", _i: 44 } })],
+                [_c("v-uni-image", { attrs: { src: "", _i: 43 } })],
                 1
               ),
-              _c("v-uni-text", { attrs: { _i: 45 } })
+              _c("v-uni-text", { attrs: { _i: 44 } })
             ],
             1
           )

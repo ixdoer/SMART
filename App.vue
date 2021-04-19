@@ -13,5 +13,11 @@
 </script>
 
 <style>
+	/*图标库 */
+	@import url("static/css/iconfont.css");
+
 	/*每个页面公共css */
+	page {
+		background-color: #efeeee;		
+	}
 </style>

@@ -81,7 +81,7 @@
 		"height": "115rpx",
 		"color": "black",
 		"selectedColor": "red",
-		"backgroundColor": "#FFFFEF",
+		"backgroundColor": "#FFFFFF",
 		"fontSize": "20rpx",
 		"list": [{
 				"pagePath": "pages/community/community",

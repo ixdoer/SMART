@@ -21,47 +21,47 @@
 				</view>
 				<text class="navtext">{{item.text}}</text>
 			</navigator>
-		</view>		
+		</view>
 
 		<view class="hot">
 			<view class="title">
 				<text class="colLine">|</text>
-				<text class="titleText">{{title.hot}}</text>
+				<text class="titleText">{{hot.title}}</text>
 			</view>
 			<view class="hotContent">
-				<view class="box1">
-					<text>a</text>
-				</view>
-				<view class="box2">
-					<text>b</text>
-				</view>
-				<view class="box3">
-					<text>c</text>
-				</view>
+				<navigator class="box1 box">
+					<image src="../../static/images/fruit.jpg" mode=""></image>
+					<text class="discribeTitle">{{hot.content.box1.headline}}</text>
+					<text class="discribeDetail">{{hot.content.box1.detail}}</text>
+
+				</navigator>
+				<navigator class="box2 box">
+					<image src="../../static/images/clean.jpg" mode=""></image>
+					<!-- <text class="discribeTitle">{{hot.content.box2.headline}}</text>
+					<text class="discribeDetail">{{hot.content.box2.detail}}</text> -->
+
+				</navigator>
+				<navigator class="box3 box">
+					<image src="../../static/images/wash2.jpg" mode=""></image>
+					<!-- <text class="discribeTitle">{{hot.content.box3.headline}}</text>
+					<text class="discribeDetail">{{hot.content.box3.detail}}</text> -->
+				</navigator>
 			</view>
 		</view>
-		
+
 		<view class="notice">
 			<view class="title">
 				<text class="colLine">|</text>
-				<text class="titleText">{{title.notice}}</text>
+				<text class="titleText">{{notice.title}}</text>
 			</view>
 			<view class="noticeContainer">
-				<view class="noticeContent">
-					
-				</view>
-				<view class="noticeContent">
-					
-				</view>
-				<view class="noticeContent">
-					
-				</view>
-				<view class="noticeContent">
-					
-				</view>
+				<navigator class="noticeContent" v-for="(item,index) in notice.content" :key=index>
+					<image src="../../static/images/通知.png" mode=""></image>
+					<text>{{notice.content[index].headline}}</text>
+				</navigator>
 			</view>
 		</view>
-		
+
 	</view>
 </template>
 
@@ -113,9 +113,41 @@
 					url: '../partyBuilding/partyBuilding',
 					iconsrc: '../../static/images/党建.png'
 				}],
-				title: {
-					notice: '社区公告',										
-					hot: '热门推荐'
+				hot: {
+					title: '热门推荐',
+					content: {
+						box1: {
+							headline: '买一送一',
+							detail: '今日秒杀，拼手速！'
+						},
+						box2: {
+							headline: '高效保洁',
+							detail: '随时上门，随时约！'
+						},
+						box3: {
+							headline: '衣物干洗',
+							detail: '上门取送，速度快！'
+						},
+					}
+				},
+				notice: {
+					title: '社区公告',
+					content: [{
+							headline: '关于阳光小区疫情防控工作的通知',
+							article: '',
+							date:''
+						},
+						{
+							headline: '关于4月1日停电的通知',
+							article: '',
+							date:''
+						},
+						{
+							headline: '关于阳光小区社区乒乓球大赛的通知',
+							article: '',
+							date:''
+						}
+					]
 				}
 			}
 		},
@@ -126,14 +158,17 @@
 </script>
 <style>
 	.logo {
+		width: 40%;
 		position: relative;
 		margin-left: 25rpx;
+		border-radius: 25rpx;
+		box-shadow: 10rpx 10rpx 20rpx rgba(0, 0, 0, 0.2), -10rpx -10rpx 20rpx rgba(255, 255, 255, 1);
 	}
 
 	.logo image {
 		height: 100rpx;
 		width: 100rpx;
-		margin-right: 25rpx;
+		margin: auto 25rpx;
 	}
 
 	.logo text {
@@ -158,7 +193,7 @@
 	}
 
 	.navbar {
-		width: 90%;
+		width: 95%;
 		margin: 30rpx auto;
 		display: flex;
 		justify-content: space-between;
@@ -206,45 +241,83 @@
 		font-weight: bold;
 	}
 
-	.hotContent {		
+	.hotContent {
 		width: 94%;
 		height: 400rpx;
 		margin: 25rpx auto;
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr 1fr;
-		grid-template-areas:
-			"box1 box2"
-			"box1 box3";
-		grid-gap: 15rpx 15rpx;
+		position: relative;
+
 	}
 
-	.box1 {		
-		grid-area: box1;
-		border: 1rpx solid red;
+	.box {
+		box-shadow: 10rpx 10rpx 20rpx rgba(0, 0, 0, 0.2), -10rpx -10rpx 20rpx rgba(255, 255, 255, 1);
 		border-radius: 15rpx;
+		position: absolute;
+	}
+
+	.box1 {
+		width: 49%;
+		height: 100%;
+
 	}
 
 	.box2 {
-		border: 1rpx solid red;
-		border-radius: 15rpx;
-		grid-area: box2;
+		width: 48%;
+		height: 48%;
+		right: 0;
 	}
 
 	.box3 {
-		border: 1rpx solid red;
-		border-radius: 15rpx;
-		grid-area: box3;
+		width: 48%;
+		height: 48%;
+		right: 0;
+		bottom: 0;
 	}
-	.notice{
-		width:95%;
-		margin: 25rpx auto;
-	}
-	.noticeContent{
+
+
+	.box image {
 		width: 100%;
-		height: 50rpx;
-		margin-top: 25rpx;
-		border: 1rpx solid red;
+		height: 100%;
 		border-radius: 15rpx;
+	}
+
+	.box .discribeTitle {
+		position: absolute;
+		font-size: 40rpx;
+		font-weight: 900;
+		color: #FF0000;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.box .discribeDetail {
+		position: absolute;
+		color: #FF0000;
+		top: 230rpx;
+		left: 40rpx;
+	}
+
+	.notice {
+		margin-top: 50rpx;
+		//为了解决页面底部在H5端被tabbar遮住
+		padding-bottom: var(--window-bottom);		
+	}
+
+	.noticeContent {
+		width: 94%;
+		height: 60rpx;
+		margin: 15rpx auto;
+		border-radius: 15rpx;
+		display: flex;
+		align-items: center;
+		background-color: #FFECEC;		
+		box-shadow: 10rpx 10rpx 20rpx rgba(0, 0, 0, 0.2), 10rpx 10rpx 20rpx rgba(255, 255, 255, 1);
+	}
+
+	.noticeContent image {
+		width: 50rpx;
+		height: 50Rpx;
+		margin: auto 10rpx;
 	}
 </style>

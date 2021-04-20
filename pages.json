@@ -7,121 +7,107 @@
 			}
 		}, {
 			"path": "pages/community/community",
-			"style": {
-				"navigationBarTitleText": "社区",
+			"style": {				
 				"enablePullDownRefresh": true
 			}
 		}, {
 			"path": "pages/property/property",
-			"style": {
-				"navigationBarTitleText": "物业",
+			"style": {				
 				"enablePullDownRefresh": true
 			}
 		}, {
 			"path": "pages/control/control",
-			"style": {
-				"navigationBarTitleText": "我家",
+			"style": {				
 				"enablePullDownRefresh": true
 			}
 		}, {
 			"path": "pages/around/around",
-			"style": {
-				"navigationBarTitleText": "周边",
+			"style": {				
 				"enablePullDownRefresh": true
 			}
 		}, {
 			"path": "pages/myinfo/myinfo",
-			"style": {
-				"navigationBarTitleText": "我的",
+			"style": {				
 				"enablePullDownRefresh": true
 			}
 		}, {
 
 			"path": "pages/shopping/shopping",
 			"style": {
-				"navigationBarTitleText": "社区商城"
+				"enablePullDownRefresh": true
 			}
 		}, {
 			"path": "pages/housekeeping/housekeeping",
-			"style": {
-				"navigationBarTitleText": "社区家政",
+			"style": {				
 				"enablePullDownRefresh": true
 			}
 		}, {
 			"path": "pages/canteen/canteen",
-			"style": {
-				"navigationBarTitleText": "社区食堂",
+			"style": {				
 				"enablePullDownRefresh": true
 			}
 		}, {
 			"path": "pages/pension/pension",
-			"style": {
-				"navigationBarTitleText": "社区养老",
+			"style": {				
 				"enablePullDownRefresh": true
 			}
 		}, {
 			"path": "pages/education/education",
-			"style": {
-				"navigationBarTitleText": "社区教育",
+			"style": {				
 				"enablePullDownRefresh": true
 			}
 		}, {
 			"path": "pages/publicWelfare/publicWelfare",
-			"style": {
-				"navigationBarTitleText": "社区公益",
+			"style": {				
 				"enablePullDownRefresh": true
 			}
 		}, {
 			"path": "pages/entertainment/entertainment",
-			"style": {
-				"navigationBarTitleText": "社区文娱",
+			"style": {				
 				"enablePullDownRefresh": true
 			}
 		}, {
 			"path": "pages/partyBuilding/partyBuilding",
-			"style": {
-				"navigationBarTitleText": "社区党建",
+			"style": {				
 				"enablePullDownRefresh": true
 			}
 		}
 	],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "SMART",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+	"globalStyle": {		
+		"backgroundColor": "#F8F8F8",
+		"navigationStyle":"custom"
 	},	
 	"tabBar": {
 		"height": "115rpx",
-		"color": "#14FFE9",
+		"color": "black",
 		"selectedColor": "red",
-		"backgroundColor": "#FFFFFF",
-		"fontSize": "30rpx",
+		"backgroundColor": "#FFFFEF",
+		"fontSize": "20rpx",
 		"list": [{
 				"pagePath": "pages/community/community",
-				"iconPath": "static/images/down.png",
-				"selectedIconPath": "static/images/down.png",
+				"iconPath": "static/images/tab1.png",
+				"selectedIconPath": "static/images/tab2.png",
 				"text": "社区"
 			}, {
 				"pagePath": "pages/property/property",
-				"iconPath": "static/images/down.png",
-				"selectedIconPath": "static/images/down.png",
+				"iconPath": "static/images/tab3.png",
+				"selectedIconPath": "static/images/tab4.png",
 				"text": "物业"
 			}, {
 				"pagePath": "pages/control/control",
-				"iconPath": "static/images/down.png",
-				"selectedIconPath": "static/images/down.png",
+				"iconPath": "static/images/tab5.png",
+				"selectedIconPath": "static/images/tab6.png",
 				"text": "我家"
 			}, {
 				"pagePath": "pages/around/around",
-				"iconPath": "static/images/down.png",
-				"selectedIconPath": "static/images/down.png",
+				"iconPath": "static/images/tab7.png",
+				"selectedIconPath": "static/images/tab8.png",
 				"text": "周边"
 			},
 			{
 				"pagePath": "pages/myinfo/myinfo",
-				"iconPath": "static/images/down.png",
-				"selectedIconPath": "static/images/down.png",
+				"iconPath": "static/images/tab9.png",
+				"selectedIconPath": "static/images/tab10.png",
 				"text": "我的"
 			}
 		]

@@ -1,13 +1,8 @@
 <template>
 	<view>
-		<view class="logo">
-			<image :src="logoUrl"></image>
-			<text>阳光小区</text>
-		</view>
-
 		<view class="preview">
 			<swiper class="swiper" indicator-dots="true" indicator-color="blue" circular="true" autoplay="true"
-			 indicator-active-color="red" interval="2000" :duration="500">
+				indicator-active-color="red" interval="2000" :duration="500">
 				<swiper-item v-for="item in items" :key="item.text">
 					<image class="comImage" :src="item.imageUrl"></image>
 				</swiper-item>
@@ -30,21 +25,16 @@
 			</view>
 			<view class="hotContent">
 				<navigator class="box1 box">
-					<image src="../../static/images/fruit.jpg" mode=""></image>
+					<image src="../../static/images/fruit3.jpg" mode=""></image>
 					<text class="discribeTitle">{{hot.content.box1.headline}}</text>
 					<text class="discribeDetail">{{hot.content.box1.detail}}</text>
-
 				</navigator>
+				
 				<navigator class="box2 box">
 					<image src="../../static/images/clean.jpg" mode=""></image>
-					<!-- <text class="discribeTitle">{{hot.content.box2.headline}}</text>
-					<text class="discribeDetail">{{hot.content.box2.detail}}</text> -->
-
 				</navigator>
 				<navigator class="box3 box">
-					<image src="../../static/images/wash2.jpg" mode=""></image>
-					<!-- <text class="discribeTitle">{{hot.content.box3.headline}}</text>
-					<text class="discribeDetail">{{hot.content.box3.detail}}</text> -->
+					<image src="../../static/images/wash2.jpg" mode=""></image>					
 				</navigator>
 			</view>
 		</view>
@@ -135,56 +125,39 @@
 					content: [{
 							headline: '关于阳光小区疫情防控工作的通知',
 							article: '',
-							date:''
+							date: ''
 						},
 						{
 							headline: '关于4月1日停电的通知',
 							article: '',
-							date:''
+							date: ''
 						},
 						{
 							headline: '关于阳光小区社区乒乓球大赛的通知',
 							article: '',
-							date:''
+							date: ''
 						}
 					]
 				}
 			}
 		},
+		// onLoad: function() {
+		// 	loginRes = this.checkLogin('../community/community', 2);
+		// 	if (!loginRes) {
+		// 		return;
+		// 	}
+		// },
 		methods: {
 
 		}
 	}
 </script>
 <style>
-	.logo {
-		width: 40%;
-		position: relative;
-		margin-left: 25rpx;
-		border-radius: 25rpx;
-		box-shadow: 10rpx 10rpx 20rpx rgba(0, 0, 0, 0.2), -10rpx -10rpx 20rpx rgba(255, 255, 255, 1);
-	}
-
-	.logo image {
-		height: 100rpx;
-		width: 100rpx;
-		margin: auto 25rpx;
-	}
-
-	.logo text {
-		font-size: 35rpx;
-		color: #377EB4;
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-
 	.swiper {
 		height: 400rpx;
 		margin: 10rpx 25rpx;
 		border-radius: 30rpx;
 		overflow: hidden;
-		box-shadow: 10rpx 10rpx 20rpx rgba(0, 0, 0, 0.2), 10rpx 10rpx 20rpx rgba(255, 255, 255, 1);
 	}
 
 	.comImage {
@@ -214,7 +187,6 @@
 		height: 110rpx;
 		border-radius: 50%;
 		position: relative;
-		box-shadow: 10rpx 10rpx 20rpx rgba(0, 0, 0, 0.2), -10rpx -10rpx 20rpx rgba(255, 255, 255, 1);
 	}
 
 	.navbar image {
@@ -250,7 +222,6 @@
 	}
 
 	.box {
-		box-shadow: 10rpx 10rpx 20rpx rgba(0, 0, 0, 0.2), -10rpx -10rpx 20rpx rgba(255, 255, 255, 1);
 		border-radius: 15rpx;
 		position: absolute;
 	}
@@ -300,19 +271,16 @@
 
 	.notice {
 		margin-top: 50rpx;
-		//为了解决页面底部在H5端被tabbar遮住
-		padding-bottom: var(--window-bottom);		
 	}
 
 	.noticeContent {
+		background-color: white;
 		width: 94%;
 		height: 60rpx;
 		margin: 15rpx auto;
 		border-radius: 15rpx;
 		display: flex;
 		align-items: center;
-		background-color: #FFECEC;		
-		box-shadow: 10rpx 10rpx 20rpx rgba(0, 0, 0, 0.2), 10rpx 10rpx 20rpx rgba(255, 255, 255, 1);
 	}
 
 	.noticeContent image {

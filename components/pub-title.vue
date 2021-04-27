@@ -1,37 +1,32 @@
 <template>
 	<view class="title">
 		<text class="colLine">|</text>
-		<text class="content">{title}</text>
+		<text class="word">{{title}}</text>
 	</view>
 </template>
 
 <script>
-	export default{
-		props:{			
-			title							
-		},
-		data(){				
-			return{
-			}
+	export default {
+		props: {
+			title: String
 		}
 	}
 </script>
 
 <style>
-	.title{
-		position: relative;	
-	}	
-	.colLine {
-		height: 100rpx;
-		width: 100rpx;
-		margin-right: 25rpx;		
-	}
-	
-	.content {
+	.title {
+		margin-top: 70rpx;
 		font-size: 35rpx;
-		color:#377EB4;		
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
+	}
+
+	.colLine {
+		color: blue;
+		font-weight: bold;
+		display: inline-block;
+		margin: auto 20rpx;
+	}
+
+	.word {
+		margin-top: 15rpx;
 	}
 </style>

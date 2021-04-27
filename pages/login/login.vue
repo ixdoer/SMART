@@ -32,8 +32,32 @@
 				passWord: ''
 			}
 		},
-		onLoad() {
-
+		onLoad(options) {
+         console.log(options);
+		 //#ifdef APP-PLUS
+		 uni.login({
+		 	success:(res)=>{
+				uni.getUserInfo({
+					success: (info) => {
+						
+					},
+					fail() {
+						uni.showToast({
+							title:"无法获取用户信息",
+							icon:"none"
+						})
+					}
+				})
+			},
+			fail() {
+				uni.showToast({
+					title:"微信登录授权失败",
+					icon:"none"
+				})
+			}
+		 })
+		 //#endif
+		 
 		},
 		methods: {
 			login() {

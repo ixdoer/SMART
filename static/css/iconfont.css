@@ -1,6 +1,6 @@
 @font-face {
 	font-family: "iconfont";
-	src:url('https://at.alicdn.com/t/font_2496784_m2b41qsz6b.ttf') format('truetype')
+	src:url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAQAAAsAAAAACPQAAAOzAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDMAqEOINrATYCJAMYCw4ABCAFhG0HgSAb0QfIHpIkgbBnPN7N3mEGIOLh/b24c9/q2FM19VuOjSJVBIUjHiwKNMIjdJVBbyP+/65lv8iqnBKBQkhnMzNZyrxspgDgiIVqhTtix+BOnqPRtXyQTJoUK4UkLDEMSU0tp4dtndz/HDNepG00zG9bgw5wBlFpFQU4Ho4GtIsoK5ADvgO5d3iu5wB2t+z7CfRblszusra5DVwV+mGB+EAVDK4Ju1JBCr2mVnBuEd9UvelLeorjq/f98R93FK4kNdMfdPe+xgDlv/o/MeJcN+dtnvN5OC/Yi8g4BArxrtD/wiFIHnLQL/M7OgKa0ph+jX5i/x1Dyjw7y9QPIp5kBf880ej6QWCudPW4FBaL4NdAioBfQ7DI/BqxKPzC7CrMbcD2YXwHfgNzaMxGNNU6ZX6WIMfJrVK3HNkqtgu2nT8DhNzTOWcK5MM3nvmVcjzzbpc7pfh2oVW07iMzAJzjFXcGFaNntuG5bDC1L3TLnehCxY5tzy4w/v2xJxe8sy7eFddU44aH+GKn1I0ttgst/x40IcSbX7IP8C45xv63nsWf/xn+oAkiMy6gGgEwIgqCJnytjwT9qw7lNzM6VUyMku7/2f2dDvWvhhqWUR7gQb+ML/WfLnYvanNbtErgf1k9MWqgmlj2iaxW3cz72Lv5U+jz149a4jKuR9Lt2P9HG1UH2porV0xQHHOSVBqOV8i5nyOs/ngvUVZ7nywDi8xSDeWjbd2o94Ta79e/Hhi0MySOJJAkJJmXWVGPFrb1mHxnAibcFEB3M98iVgB0NzxUufmmLEUZ+Y39y3/gZ7wWc/0HfYp/u5IK+Hk7+A/B7kaB5qleCVbxxhUNZ4qi0h2tSIOtfQWaFQ7cRqt+w8HbroZxH4cyTjUuJ/SaiiDpsQRZr01EwRxCNeAYml4n0O9A3cUDJnAOovRh3zIBYdQVJMNeIRv1DFEwH6Ca9gua0XCAfm8i4JoDtoO6V3GCBTGg4XFEJWaVTZdw9ytbiKKbMY+rPGoH4TYaQRmp6elMHbESPsQJthElUwgZyZxZUC3xMGI2M6RxZiSSSFWF0ArT0uSiD0qVmAXcXeAITCAMkGHjEErCWMnOcsE98/UtCIXODOMVA2XhDgRnQzdHMqRKb4Co01sbDVzKzjYjFJkEQaYOknGMBVILL2E2kgyiFe9lREiEVGqHuKZQGrlIbqpPnd5oucsr0E9/cYsUOUrUaNFj9qOKrcoYxRM6G2d6G6fxdcwkoyAwV0KOJomWvlumiwlTRcdWAA==') format('woff2')
 }
 
 .iconfont {
@@ -11,53 +11,24 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-wuyebaoxiu:before {
-	content: "\e6af";
+/* 遥控器的图标 */
+/* 下 */
+.icon-shangxiazuoyouTriangle19:before {
+  content: "\e693";
+}
+/* 右 */
+.icon-shangxiazuoyouTriangle111:before {
+  content: "\e694";
+}
+/* 上 */
+.icon-shangxiazuoyouTriangle110:before {
+  content: "\e695";
+}
+/* 左 */
+.icon-shangxiazuoyouTriangle112:before {
+  content: "\e696";
 }
 
-.icon-zhoubian:before {
-	content: "\e87a";
-}
-
-.icon-dibudaohanglan-:before {
-	content: "\e62e";
-}
-
-.icon-home:before {
-	content: "\e647";
-}
-
-.icon-wode:before {
-	content: "\e61b";
-}
-.icon-swticonjiazhengyuan:before {
-  content: "\e62e";
-}
-
-.icon-jiaoyu:before {
-  content: "\e6b5";
-}
-
-.icon-shangchengcopy:before {
-  content: "\e619";
-}
-
-.icon-wentizujieguanli:before {
-  content: "\e659";
-}
-
-.icon-gongyi:before {
-  content: "\e71a";
-}
-
-.icon-shitang:before {
-  content: "\e71d";
-}
-
-.icon-dangjian:before {
-  content: "\e60a";
-}
-
-.icon-zhihuiyanglao:before {
-  content: "\e605";
+.icon-kaiguan:before {
+  content: "\e6c5";
 }

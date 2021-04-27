@@ -13,5 +13,68 @@
 
 
 
+/*图标库 */
+@font-face {
+	font-family: "iconfont";
+	src:url('https://at.alicdn.com/t/font_2496784_m2b41qsz6b.ttf') format('truetype')
+}
+.iconfont {
+	font-family: "iconfont" !important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.icon-wuyebaoxiu:before {
+	content: "\e6af";
+}
+.icon-zhoubian:before {
+	content: "\e87a";
+}
+.icon-dibudaohanglan-:before {
+	content: "\e62e";
+}
+.icon-home:before {
+	content: "\e647";
+}
+.icon-wode:before {
+	content: "\e61b";
+}
+.icon-swticonjiazhengyuan:before {
+  content: "\e62e";
+}
+.icon-jiaoyu:before {
+  content: "\e6b5";
+}
+.icon-shangchengcopy:before {
+  content: "\e619";
+}
+.icon-wentizujieguanli:before {
+  content: "\e659";
+}
+.icon-gongyi:before {
+  content: "\e71a";
+}
+.icon-shitang:before {
+  content: "\e71d";
+}
+.icon-dangjian:before {
+  content: "\e60a";
+}
+.icon-zhihuiyanglao:before {
+  content: "\e605";
+}
+/* 关掉滑动条 */
+::-webkit-scrollbar {
+	display: none;
+}
 /*每个页面公共css */
+page {
+
+	/* 为了解决页面底部在H5端被tabbar遮住 */
+	padding-bottom: 0px;
+
+	/* 设置页面背景色 */
+	background-color: #f5f6fa
+}
 

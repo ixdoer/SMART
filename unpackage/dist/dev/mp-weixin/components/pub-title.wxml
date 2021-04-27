@@ -1,0 +1,1 @@
+<view class="title"><text class="colLine">|</text><text class="word">{{title}}</text></view>

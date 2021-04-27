@@ -169,7 +169,31 @@ var _default =
       passWord: '' };
 
   },
-  onLoad: function onLoad() {
+  onLoad: function onLoad(options) {
+    console.log(options);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   },
   methods: {
@@ -188,10 +212,9 @@ var _default =
           icon: "none" });
 
         setTimeout(function () {
-          uni.redirectTo({
+          uni.switchTab({
             url: "../control/control" });
 
-          N;
         }, 1000);
         uni.setStorageSync("userName", this.userName);
         uni.setStorageSync("passWord", this.passWord);

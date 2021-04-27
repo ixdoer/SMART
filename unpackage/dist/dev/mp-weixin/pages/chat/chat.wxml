@@ -1,1 +1,0 @@
-<view data-event-opts="{{[['tap',[['',['$event']]]]]}}" class="key" bindtap="__e"><view class="img" hover-class="imgpress"><image src></image></view><text></text></view>

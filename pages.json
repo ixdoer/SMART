@@ -12,7 +12,7 @@
 			"navigationStyle": "custom"
 		}
 	}, { //我家
-		"path": "pages/control/control",
+		"path": "pages/home/home",
 		"style": {
 			"enablePullDownRefresh": true,			
 			"navigationStyle": "custom"			
@@ -81,11 +81,7 @@
 	"globalStyle": {		
 		"navigationStyle": "default",
 		"navigationBarTextStyle":"black",
-		"navigationBarBackgroundColor":"#f5f6fa"
-		// "scrollIndicator": "none",
-		// "app-plus":{
-		// "scrollIndicator":"none" //全局 在APP页面都不显示滚动条
-		// }
+		"navigationBarBackgroundColor":"#f5f6fa"		
 	},
 	"tabBar": {
 		"height": "115rpx",
@@ -99,7 +95,7 @@
 			"selectedIconPath": "static/images/community2.png",
 			"text": "社区"
 		}, {
-			"pagePath": "pages/control/control",
+			"pagePath": "pages/home/home",
 			"iconPath": "static/images/home1.png",
 			"selectedIconPath": "static/images/home2.png",
 			"text": "我家"

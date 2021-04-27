@@ -1,0 +1,204 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+/* 
+ * 基础代码
+ */
+.container {
+	margin-top: 500rpx;
+	width: 100%;
+	height: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}		
+
+
+
+
+/* 小圆环 */
+.circle {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.circle .share {
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background-color: #fff;
+	/* 用阴影实现3个px的边框 伪边框，不是真的边框 */
+	box-shadow: 0 0 0 3px #000;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	z-index: 2;
+}
+.iconfont {
+	width:100%;
+	height: 100%;
+	border-radius: 50%;
+}		
+
+
+
+
+/* 大圆环 */
+.circle ._ul {
+	position: absolute;
+	list-style: none;
+	left: -50px;
+	top: -50px;
+	right: -50px;
+	bottom: -50px;
+	background-color: #fff;
+	border-radius: 50%;
+	border: 2px solid #000;
+	box-shadow: 0 0 0 2px #fff;
+	z-index: 1;
+	overflow: hidden;
+	/* 默认为旋转180度并且缩小为0 */
+	-webkit-transform: rotate(180deg) scale(0);
+	        transform: rotate(180deg) scale(0);
+	-webkit-transition: 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;
+}		
+
+
+
+
+/* 交叉线 */
+.circle ._ul::after,
+.circle ._ul::before {
+	position: absolute;
+	content: '';
+	top: 50%;
+	left: 50%;
+	width: 110%;
+	height: 2px;
+	background-color: #000;
+}
+.circle ._ul::after {
+	-webkit-transform: translate(-50%, -50%) rotate(45deg);
+	        transform: translate(-50%, -50%) rotate(45deg);
+}
+.circle ._ul::before {
+	-webkit-transform: translate(-50%, -50%) rotate(-45deg);
+	        transform: translate(-50%, -50%) rotate(-45deg);
+}		
+
+
+
+
+/* 4个分享图标 */
+.circle ._li {
+	position: absolute;
+	display: block;
+	/* 这个地方需要定义一个高度宽度，要不然后面图标的变大缩小无法实现*/
+	width: 30px;
+	height: 30px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.circle ._li:nth-child(1) {
+	left: 10px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	        transform: translateY(-50%);
+}
+.circle ._li:nth-child(2) {
+	top: 8px;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
+}
+.circle ._li:nth-child(3) {
+	right: 10px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	        transform: translateY(-50%);
+}
+.circle ._li:nth-child(4) {
+	bottom: 8px;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
+}		
+
+
+
+
+/* 分享图标 */
+.circle ._ul image {
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+}		
+
+
+
+
+/* 鼠标移入效果 */
+.circle:hover ._ul {
+	/* 鼠标移入时显示 */
+	-webkit-transform: rotate(0deg) scale(1.5);
+	        transform: rotate(0deg) scale(1.5);
+}
+.circle ._li:hover image {
+	position: absolute;
+	-webkit-transform: scale(1.5);
+	        transform: scale(1.5);
+	background-color: #EC3E27;
+}
+

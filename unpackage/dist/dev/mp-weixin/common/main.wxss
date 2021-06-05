@@ -16,7 +16,7 @@
 /*图标库 */
 @font-face {
 	font-family: "iconfont";
-	src:url('https://at.alicdn.com/t/font_2496784_m2b41qsz6b.ttf') format('truetype')
+	src:url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAATUAAsAAAAAClAAAASHAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDXAqGTIU6ATYCJAMgCxIABCAFhG0HgTAb5AgRFZztyX4k2LjFxXqri2pBk6yXIKicWQ9IHuOivCHkAzIEkFA6IPxdygkQwLY1VaMsms0EkBdLaBefXP7ol4d8en0XALwAFsD+z+HixrQCmh8o0AAz2GtQHIdRQOP2tiVyfAdy7/BE9RRgZ0v4E3g/BBCgAOUQzVq8GcOgUQ8TgBjYr083TESPLiAJjMrOOFcHxFIsjJwnHwJLnO8Xv1BFGJBYCvVB7/Zu3pNG38vvb6mpqal0VFOZ2p0VYC8CBZQDNIixmfbhKC9eDkVAjmpagBI1SGRX9TW/X/39rVQKoFeIFyQPaP/kpQMSgUJjYeMDYaPKQySmZ8IH30tDhqOoCS0CihXQoqBYCS0ailXQYkGxGlpsKG6hDh8AxjonHXCAH0G8haqsR8ntgxFoR0lfyAR8dj7LcvR75tETXr2Kv3wZ69wzcPJpPjY9qx7sNdzeqboGTj8vILa8qBnsGfs8IjTO85LRwISQWr9//t5cMrRz79R9xcNy3b4FB/Kq8J4D0/ZPWDh72ZyxC2ctmdl+5cuY60Z373XWvSq96kxO0iu7Zn23RXOWzp6waObiWe3WeMlXr5xdB6Lr3TKrT2bHXpZaua7D9GVzlo6bXmBb0nXVhKLZa/fl7Gli3RxNlLjhzgkzls5eNn7GkpmLe6x2E56Xs2F/9k5YNznx9rV7Jswh86WbcL0knjQ+J+5EPZ6bEOTm7kECVf9uG8vTd4R4Q7tnn5HxPCse99bu008jr8OfPvV66X1/TnUr/+r1i/f00/DrSMTmNumXvPavzap++WU8T5+R4g11hWrigOPI3iV6SxtRaLoQmUEh1ejqVJWSTxXtcfvP7rixtF9mM5ozKH14VrDfV2u21XjiE537vhkr1rcXqYbl2GhOM2LDKeQqla9m3djhz+xHm78+fVDJykdXF9i2psf/Q9P7do692WR2gnpiqsSV+uMVqr83Vc45dGl2eI55sCn3rMzZ870Zxdq3K9RhY6RTRqd5I7sIjWNxPE6Ek3h5u0LthxZYeHzSJ4lXCaYAkFqiUmoogBogf2Grr6prqjGkrjioRuqr4KIIVEK6H+DPcHHelsld0ur9Z4IagE+PLJwJf2qJptuEQUJlwefm0O9wQ0SKSNUZLXEL+E4/Q4/oyl4Fm7NL+MDm4FNzZ/J5l0qncjEIDE4AEh/5QWEohtCYcmARpBrYGBpCgLK0dATJ+oCbtB8owyyAIJ0jIGFHXAEl3S9CY/7AEvUPtvQUBCTaXjOoRP0Cd8MJlW7QfUMwPFndpBu39JlcHlDCIofyTpJCCJqyjqeeaCLp4oT04VpVC1Z4hEfiYTQMDLNwJKOlV52vVWWzPqg0PBYbTQmCFLkBnW8gMNjEWovVJvH1z4iTDZAU9JSZ3xGRhPVBo1RXQDzJp0o9p7I9+eC0lLLUQZZgI/AIKxm0OANz9l4RMVTJN4jOripylq0qL4dXjmd6CQhQn22SQgktLGELnzDCj75bh4vYDz3yKZknTO4r4E/mb86vEsKrDNRczqkcajCJtXpXuxzQLbiMU1EA') format('woff2')
 }
 .iconfont {
 	font-family: "iconfont" !important;
@@ -25,44 +25,33 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-.icon-wuyebaoxiu:before {
-	content: "\e6af";
+/* 遥控器的图标 */
+/* 下 */
+.icon-shangxiazuoyouTriangle19:before {
+  content: "\e693";
 }
-.icon-zhoubian:before {
-	content: "\e87a";
+/* 右 */
+.icon-shangxiazuoyouTriangle111:before {
+  content: "\e694";
 }
-.icon-dibudaohanglan-:before {
-	content: "\e62e";
+/* 上 */
+.icon-shangxiazuoyouTriangle110:before {
+  content: "\e695";
 }
-.icon-home:before {
-	content: "\e647";
+/* 左 */
+.icon-shangxiazuoyouTriangle112:before {
+  content: "\e696";
 }
-.icon-wode:before {
-	content: "\e61b";
+.icon-kaiguan:before {
+  content: "\e6c5";
 }
-.icon-swticonjiazhengyuan:before {
-  content: "\e62e";
+/* 警报喇叭 */
+.icon-laba:before {
+  content: "\e637";
 }
-.icon-jiaoyu:before {
-  content: "\e6b5";
-}
-.icon-shangchengcopy:before {
-  content: "\e619";
-}
-.icon-wentizujieguanli:before {
-  content: "\e659";
-}
-.icon-gongyi:before {
-  content: "\e71a";
-}
-.icon-shitang:before {
-  content: "\e71d";
-}
-.icon-dangjian:before {
-  content: "\e60a";
-}
-.icon-zhihuiyanglao:before {
-  content: "\e605";
+/* 加号 */
+.icon-jiahao:before {
+  content: "\e602";
 }
 /* 关掉滑动条 */
 ::-webkit-scrollbar {

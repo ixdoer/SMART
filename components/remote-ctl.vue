@@ -1,8 +1,8 @@
 <template>
 	<view class="container">
 		<view class="circle">
-			<view class="ctrl">
-				<text class="iconfont icon-kaiguan"></text>
+			<view class="switch iconfont icon-kaiguan" >
+				
 			</view>
 			<view class="list">
 				<view class="list-item one">
@@ -35,7 +35,7 @@
 
 	.iconfont {
 		color: #bfbfbf;
-		font-size: 50rpx !important;
+		font-size: 30px !important;		
 	}
 
 	.container {		
@@ -47,7 +47,6 @@
 	}	
 
 	/* 小圆环 */
-
 	.circle {
 		position: relative;
 		width: 50px;
@@ -57,25 +56,23 @@
 		align-items: center;
 	}
 
-	.circle .ctrl {
-		box-sizing: border-box;
+	.circle .switch {
+		/* box-sizing: border-box; */
 		width: 100%;
 		height: 100%;
 		border-radius: 50%;
 		background-color: #fff;
 		/* 用阴影实现3个px的边框 伪边框，不是真的边框 */
 		box-shadow: 0 0 0 3px #000;
+		z-index: 2;
+		
+		/* 开关字体图标大小 */
+		color: #bfbfbf;		
+		font-size: 40px !important;
 		display: flex;
 		justify-content: center;
-		align-items: center;
-		z-index: 2;
-	}
-
-	/* 开关图标字体大小 */
-	.circle .ctrl text {
-		color: #bfbfbf;
-		font-size: 80rpx !important;
-	}
+		align-items: center;		
+	}	
 
 	/* 大圆环 */
 	.circle .list {

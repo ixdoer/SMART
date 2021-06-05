@@ -1,0 +1,222 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*	引入字体图标	 */
+@font-face {
+	font-family: "iconfont";
+	src:url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAATUAAsAAAAAClAAAASHAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDXAqGTIU6ATYCJAMgCxIABCAFhG0HgTAb5AgRFZztyX4k2LjFxXqri2pBk6yXIKicWQ9IHuOivCHkAzIEkFA6IPxdygkQwLY1VaMsms0EkBdLaBefXP7ol4d8en0XALwAFsD+z+HixrQCmh8o0AAz2GtQHIdRQOP2tiVyfAdy7/BE9RRgZ0v4E3g/BBCgAOUQzVq8GcOgUQ8TgBjYr083TESPLiAJjMrOOFcHxFIsjJwnHwJLnO8Xv1BFGJBYCvVB7/Zu3pNG38vvb6mpqal0VFOZ2p0VYC8CBZQDNIixmfbhKC9eDkVAjmpagBI1SGRX9TW/X/39rVQKoFeIFyQPaP/kpQMSgUJjYeMDYaPKQySmZ8IH30tDhqOoCS0CihXQoqBYCS0ailXQYkGxGlpsKG6hDh8AxjonHXCAH0G8haqsR8ntgxFoR0lfyAR8dj7LcvR75tETXr2Kv3wZ69wzcPJpPjY9qx7sNdzeqboGTj8vILa8qBnsGfs8IjTO85LRwISQWr9//t5cMrRz79R9xcNy3b4FB/Kq8J4D0/ZPWDh72ZyxC2ctmdl+5cuY60Z373XWvSq96kxO0iu7Zn23RXOWzp6waObiWe3WeMlXr5xdB6Lr3TKrT2bHXpZaua7D9GVzlo6bXmBb0nXVhKLZa/fl7Gli3RxNlLjhzgkzls5eNn7GkpmLe6x2E56Xs2F/9k5YNznx9rV7Jswh86WbcL0knjQ+J+5EPZ6bEOTm7kECVf9uG8vTd4R4Q7tnn5HxPCse99bu008jr8OfPvV66X1/TnUr/+r1i/f00/DrSMTmNumXvPavzap++WU8T5+R4g11hWrigOPI3iV6SxtRaLoQmUEh1ejqVJWSTxXtcfvP7rixtF9mM5ozKH14VrDfV2u21XjiE537vhkr1rcXqYbl2GhOM2LDKeQqla9m3djhz+xHm78+fVDJykdXF9i2psf/Q9P7do692WR2gnpiqsSV+uMVqr83Vc45dGl2eI55sCn3rMzZ870Zxdq3K9RhY6RTRqd5I7sIjWNxPE6Ek3h5u0LthxZYeHzSJ4lXCaYAkFqiUmoogBogf2Grr6prqjGkrjioRuqr4KIIVEK6H+DPcHHelsld0ur9Z4IagE+PLJwJf2qJptuEQUJlwefm0O9wQ0SKSNUZLXEL+E4/Q4/oyl4Fm7NL+MDm4FNzZ/J5l0qncjEIDE4AEh/5QWEohtCYcmARpBrYGBpCgLK0dATJ+oCbtB8owyyAIJ0jIGFHXAEl3S9CY/7AEvUPtvQUBCTaXjOoRP0Cd8MJlW7QfUMwPFndpBu39JlcHlDCIofyTpJCCJqyjqeeaCLp4oT04VpVC1Z4hEfiYTQMDLNwJKOlV52vVWWzPqg0PBYbTQmCFLkBnW8gMNjEWovVJvH1z4iTDZAU9JSZ3xGRhPVBo1RXQDzJp0o9p7I9+eC0lLLUQZZgI/AIKxm0OANz9l4RMVTJN4jOripylq0qL4dXjmd6CQhQn22SQgktLGELnzDCj75bh4vYDz3yKZknTO4r4E/mb86vEsKrDNRczqkcajCJtXpXuxzQLbiMU1EA') format('woff2')
+}
+.iconfont {
+	font-family: "iconfont" !important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+/* 遥控器的图标 */
+/* 下 */
+.icon-shangxiazuoyouTriangle19:before {
+  content: "\e693";
+}
+/* 右 */
+.icon-shangxiazuoyouTriangle111:before {
+  content: "\e694";
+}
+/* 上 */
+.icon-shangxiazuoyouTriangle110:before {
+  content: "\e695";
+}
+/* 左 */
+.icon-shangxiazuoyouTriangle112:before {
+  content: "\e696";
+}
+.icon-kaiguan:before {
+  content: "\e6c5";
+}
+/* 警报喇叭 */
+.icon-laba:before {
+  content: "\e637";
+}
+/* 加号 */
+.icon-jiahao:before {
+  content: "\e602";
+}
+.iconfont {
+	color: #bfbfbf;
+	font-size: 50rpx !important;
+}
+.container {		
+	width: 100%;
+	height: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+/* 小圆环 */
+.circle {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.circle .switch {
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background-color: #fff;
+	/* 用阴影实现3个px的边框 伪边框，不是真的边框 */
+	box-shadow: 0 0 0 3px #000;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	z-index: 2;
+}
+/* 开关图标字体大小 */
+.circle .switch text {
+	color: #bfbfbf;
+	font-size: 80rpx !important;
+}
+/* 大圆环 */
+.circle .list {
+	position: absolute;
+	list-style: none;
+	left: -50px;
+	top: -50px;
+	right: -50px;
+	bottom: -50px;
+	background-color: #fff;
+	border-radius: 50%;
+	border: 2px solid #000;
+	box-shadow: 0 0 0 2px #fff;
+	z-index: 1;
+	overflow: hidden;
+	/* 默认为旋转180度并且缩小为0 */
+	-webkit-transform: rotate(180deg) scale(0);
+	        transform: rotate(180deg) scale(0);
+	-webkit-transition: 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;
+}
+/* 交叉线 */
+.circle .list::after,
+.circle .list::before {
+	position: absolute;
+	content: '';
+	top: 50%;
+	left: 50%;
+	width: 110%;
+	height: 2px;
+	background-color: #000;
+}
+.circle .list::after {
+	-webkit-transform: translate(-50%, -50%) rotate(45deg);
+	        transform: translate(-50%, -50%) rotate(45deg);
+}
+.circle .list::before {
+	-webkit-transform: translate(-50%, -50%) rotate(-45deg);
+	        transform: translate(-50%, -50%) rotate(-45deg);
+}
+/* 4个方向图标 */
+.circle .list-item {
+	position: absolute;
+	display: block;
+	/* 这个地方需要定义一个高度宽度，又不然后面图标的变大缩小无法实现*/
+	width: 30px;
+	height: 30px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.circle .one {
+	left: 10px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	        transform: translateY(-50%);
+}
+.circle .two {
+	top: 8px;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
+}
+.circle .three {
+	right: 10px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	        transform: translateY(-50%);
+}
+.circle .four {
+	bottom: 8px;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
+}
+/* 开关点击效果 */
+.circle:hover .list {
+	-webkit-transform: rotate(0deg) scale(1.5);
+	        transform: rotate(0deg) scale(1.5);
+	color: #EC3E27;
+}
+/* 控制按钮点击效果 */
+.list .press {
+	position: absolute;
+	-webkit-transform: scale(1.25);
+	        transform: scale(1.25);
+	color: #EC3E27;
+}
+

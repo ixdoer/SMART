@@ -130,7 +130,12 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var pubTitle = function pubTitle() {__webpack_require__.e(/*! require.ensure | components/pub-title */ "components/pub-title").then((function () {return resolve(__webpack_require__(/*! ../../components/pub-title.vue */ 103));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var pubTitle = function pubTitle() {__webpack_require__.e(/*! require.ensure | components/pub-title */ "components/pub-title").then((function () {return resolve(__webpack_require__(/*! ../../components/pub-title.vue */ 108));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
+
 
 
 
@@ -192,8 +197,27 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
           {
             detail: "投诉",
             imgSrc: "../../static/images/投诉.png",
-            url: "" }] } } };
+            url: "" }] } },
 
+
+
+
+      notice: {
+        title: '社区公告',
+        content: [{
+          headline: '关于阳光小区疫情防控工作的通知',
+          article: '',
+          date: '' },
+
+        {
+          headline: '关于4月1日停电的通知',
+          article: '',
+          date: '' },
+
+        {
+          headline: '关于阳光小区社区乒乓球大赛的通知',
+          article: '',
+          date: '' }] } };
 
 
 

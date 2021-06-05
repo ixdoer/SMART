@@ -1,5 +1,7 @@
 {
   "enablePullDownRefresh": true,
-  "navigationStyle": "custom",
-  "usingComponents": {}
+  "navigationBarTitleText": "我家",
+  "usingComponents": {
+    "remote-ctl": "/components/remote-ctl"
+  }
 }

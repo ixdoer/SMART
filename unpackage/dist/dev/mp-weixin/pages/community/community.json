@@ -1,5 +1,5 @@
 {
   "enablePullDownRefresh": true,
-  "navigationStyle": "custom",
+  "navigationBarTitleText": "社区",
   "usingComponents": {}
 }

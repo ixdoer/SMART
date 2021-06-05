@@ -1,12 +1,29 @@
 <template>
 	<view>
-		<view class="preview">
-			<swiper class="swiper" indicator-dots="true" indicator-color="blue" circular="true" autoplay="true"
-				indicator-active-color="red" interval="2000" :duration="500">
-				<swiper-item v-for="item in items" :key="item.text">
-					<image class="comImage" :src="item.imageUrl"></image>
-				</swiper-item>
-			</swiper>
+		<view class="">
+			<view class="panel">
+				<view class="location">
+					<image src="../../static/images/location.png" mode=""></image>
+					<text>{{location}}</text>
+				</view>
+				<view class="weather">
+					<image :src="weatherIcon"></image>
+					<text class="temperature">{{temperature}}℃</text>
+					<text class="weatherText">{{weatherText}}</text>
+				</view>
+
+				<view class="advice">
+					<text class="T">温馨提示：</text>
+					<text class="C">{{advice}}</text>
+				</view>
+
+				<view class="index">
+					<text class="humidity terms">湿度 {{humidity}}%</text>
+					<text class="wind terms">{{winddirection}} {{windpower}}级</text>
+					<text class="air terms">空气质量 {{air}}</text>
+					<text class="ultraviolet terms">紫外线 {{ultraviolet}}</text>
+				</view>
+			</view>
 		</view>
 
 		<view class="navbar">
@@ -17,41 +34,11 @@
 				<text class="navtext">{{item.text}}</text>
 			</navigator>
 		</view>
-
-		<view class="hot">
-			<view class="title">
-				<text class="colLine">|</text>
-				<text class="titleText">{{hot.title}}</text>
-			</view>
-			<view class="hotContent">
-				<navigator class="box1 box">
-					<image src="../../static/images/fruit3.jpg" mode=""></image>
-					<text class="discribeTitle">{{hot.content.box1.headline}}</text>
-					<text class="discribeDetail">{{hot.content.box1.detail}}</text>
-				</navigator>
-				
-				<navigator class="box2 box">
-					<image src="../../static/images/clean.jpg" mode=""></image>
-				</navigator>
-				<navigator class="box3 box">
-					<image src="../../static/images/wash2.jpg" mode=""></image>					
-				</navigator>
-			</view>
+		<!--门禁系统 -->
+		<view class="door">
+			<image src="../../static/images/menjin.png" mode=""></image>
+			<text>社区门禁</text>
 		</view>
-
-		<view class="notice">
-			<view class="title">
-				<text class="colLine">|</text>
-				<text class="titleText">{{notice.title}}</text>
-			</view>
-			<view class="noticeContainer">
-				<navigator class="noticeContent" v-for="(item,index) in notice.content" :key=index>
-					<image src="../../static/images/通知.png" mode=""></image>
-					<text>{{notice.content[index].headline}}</text>
-				</navigator>
-			</view>
-		</view>
-
 	</view>
 </template>
 
@@ -59,110 +46,231 @@
 	export default {
 		data() {
 			return {
-				logoUrl: "../../static/images/logo.png",
-				items: [{
-					text: "A",
-					imageUrl: "../../static/images/community1.png"
-				}, {
-					text: "B",
-					imageUrl: "../../static/images/community2.png"
-				}, {
-					text: "C",
-					imageUrl: "../../static/images/community3.png"
-				}],
+				//高德地图key
+				gaoKey: 'e8b6f69a02c2812e7def0dceccedf35b',
+				location: '',
+				city: '',
+
+				//和风天气key				
+				heKey: '8bac38a17213411fb8ee5880aeae0d56',
+				humidity: '',
+				temperature: '',
+				weatherText: '',
+				winddirection: "",
+				windpower: "",
+				weatherIcon: '',
+
+				air: '',
+				ultraviolet: '',
+				advice: '',
+
 				navList: [{
 					text: '社区商城',
 					url: '../shopping/shopping',
-					iconsrc: '../../static/images/商城.png'
+					iconsrc: '../../static/images/shangcheng.png'
 				}, {
 					text: '社区家政',
 					url: '../housekeeping/housekeeping',
-					iconsrc: '../../static/images/家政.png'
+					iconsrc: '../../static/images/jiazheng.png'
 				}, {
 					text: '社区食堂',
 					url: '../canteen/canteen',
-					iconsrc: '../../static/images/食堂.png'
+					iconsrc: '../../static/images/shitang.png'
 				}, {
 					text: '社区养老',
 					url: '../pension/pension',
-					iconsrc: '../../static/images/养老.png'
+					iconsrc: '../../static/images/yanglao.png'
 				}, {
 					text: '社区教育',
 					url: '../education/education',
-					iconsrc: '../../static/images/教育.png'
+					iconsrc: '../../static/images/jiaoyu.png'
 				}, {
 					text: '社区公益',
 					url: '../publicWelfare/publicWelfare',
-					iconsrc: '../../static/images/公益.png'
+					iconsrc: '../../static/images/gonyi.png'
 				}, {
 					text: '社区文娱',
 					url: '../entertainment/entertainment',
-					iconsrc: '../../static/images/文娱.png'
+					iconsrc: '../../static/images/wenyu.png'
 				}, {
 					text: '社区党建',
 					url: '../partyBuilding/partyBuilding',
-					iconsrc: '../../static/images/党建.png'
-				}],
-				hot: {
-					title: '热门推荐',
-					content: {
-						box1: {
-							headline: '买一送一',
-							detail: '今日秒杀，拼手速！'
-						},
-						box2: {
-							headline: '高效保洁',
-							detail: '随时上门，随时约！'
-						},
-						box3: {
-							headline: '衣物干洗',
-							detail: '上门取送，速度快！'
-						},
-					}
-				},
-				notice: {
-					title: '社区公告',
-					content: [{
-							headline: '关于阳光小区疫情防控工作的通知',
-							article: '',
-							date: ''
-						},
-						{
-							headline: '关于4月1日停电的通知',
-							article: '',
-							date: ''
-						},
-						{
-							headline: '关于阳光小区社区乒乓球大赛的通知',
-							article: '',
-							date: ''
-						}
-					]
-				}
+					iconsrc: '../../static/images/dangjian.png'
+				}]
 			}
 		},
-		// onLoad: function() {
-		// 	loginRes = this.checkLogin('../community/community', 2);
-		// 	if (!loginRes) {
-		// 		return;
-		// 	}
-		// },
-		methods: {
-
+		onShow() {
+			let self = this;
+			//使用高德地图进行定位
+			let amapFile = require('../../common/amap-wx.js');
+			let amapPlugin = new amapFile.AMapWX({
+				key: this.gaoKey
+			});
+			amapPlugin.getWeather({
+				success: (res) => {
+					self.location = res.city.data
+				},
+				fail: function(info) {
+					console.log("定位请求失败！")
+				}
+			});
+			uni.getLocation({
+				type: 'wgs84',
+				success: function(res) {
+					//获得当前位置的经度和纬度
+					console.log(res)
+					self.location = res.longitude + ',' + res.latitude;
+					//请求和风天气数据
+					uni.request({
+						//地址
+						url: 'https://devapi.qweather.com/v7/weather/now?',
+						//参数
+						data: {
+							location: self.location,
+							key: self.heKey
+						},
+						success: (res) => {
+							let now = res.data.now;
+							self.temperature = now.temp;
+							self.humidity = now.humidity
+							self.weatherText = now.text;
+							self.winddirection = now.windDir;
+							self.windpower = now.windScale;
+							self.weatherIcon = `../../static/images/weatherImg/${now.icon}.png`;
+						}
+					});
+					//请求空气质量数据
+					uni.request({
+						//地址
+						url: 'https://devapi.qweather.com/v7/air/now?',
+						//参数
+						data: {
+							location: self.location,
+							key: self.heKey
+						},
+						success: (res) => {
+							self.air = res.data.now.category;
+						}
+					});
+					//请求生活指数数据
+					uni.request({
+						//地址
+						url: 'https://devapi.qweather.com/v7/indices/1d?',
+						//参数
+						data: {
+							type: '3,5',
+							location: self.location,
+							key: self.heKey
+						},
+						success: (res) => {
+							console.log(res)
+							self.advice = res.data.daily['0'].text;
+							self.ultraviolet = res.data.daily['1'].category;
+						}
+					});
+				}
+			});
 		}
 	}
 </script>
-<style>
-	.swiper {
+<style lang=scss>
+	/* 学习了scss语法,很好用 */
+
+	.panel {
 		height: 400rpx;
 		margin: 10rpx 25rpx;
 		border-radius: 30rpx;
 		overflow: hidden;
-	}
+		margin-bottom: 60rpx;
+		background-color: #e7effd;
+		position: relative;
+		box-shadow: 10rpx 10rpx 20rpx rgba(0, 0, 0, 0.2), 10rpx 10rpx 20rpx rgba(255, 255, 255, 1);
 
-	.comImage {
-		width: 100%;
-		height: 100%;
+		.weather {
+			position: absolute;	
+			top:-20rpx;
+			left:35rpx;
+			image {
+				width: 220rpx;
+				height: 220rpx;
+				position: absolute;
+				top: 10rpx;
+				display: block;
+			}
+
+			.temperature {
+				font-size: 50rpx;
+				position: absolute;
+				left: 210rpx;
+				top: 70rpx;
+			}
+
+			.weatherText {
+				position: absolute;
+				left: 220rpx;
+				top: 135rpx;
+				width: 90rpx;
+				font-size: 30rpx;
+				text-align: center;
+			}
+		}
+
+		.location {
+			margin-left: 20rpx;
+			display: flex;
+			align-items: center;
+			position: absolute;
+			top:20rpx;
+			right:60rpx;
+
+			image {
+				width: 50rpx;
+				height: 50rpx;
+			}
+		}
+
+		.index {
+			position: absolute;
+			bottom: 40rpx;
+			right: 30rpx;
+			display: flex;
+			width: 180rpx;
+			flex-wrap: wrap;
+
+			.terms {
+				width: 180rpx;
+				height: 45rpx;
+				font-size: 30rpx;
+				text-align: center;
+				border-radius: 10rpx;
+				margin-top: 25rpx;
+				background-color: #f5f6fa;
+				box-shadow: 10rpx 10rpx 20rpx rgba(0, 0, 0, 0.2), 10rpx 10rpx 20rpx rgba(255, 255, 255, 1);
+			}
+		}
+
+		.advice {
+			position: absolute;
+			left: 40rpx;
+			bottom: 40rpx;
+			width: 400rpx;
+
+			.T {
+				font-size: 30rpx;
+				color: #77B307;
+				display: block;
+			}
+
+			.C {
+				font-size: 30rpx;
+				color: #007AFF;
+				display: block;
+				border-radius: 10rpx;
+				border: 1rpx solid #f5f6fa;
+				padding: 5rpx 5rpx;
+				box-shadow: 10rpx 10rpx 20rpx rgba(0, 0, 0, 0.2), 10rpx 10rpx 20rpx rgba(255, 255, 255, 1);
+			}
+		}
 	}
 
 	.navbar {
@@ -171,121 +279,54 @@
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
+
+		navigator {
+			width: 25%;
+			margin-bottom: 30rpx;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.icon {
+			width: 110rpx;
+			height: 110rpx;
+			border-radius: 50%;
+			position: relative;
+		}
+
+		image {
+			width: 70%;
+			height: 70%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		text {
+			margin-top: 10rpx;
+			font-size: 30rpx;
+		}
 	}
 
-	.navbar navigator {
-		width: 25%;
-		margin-bottom: 30rpx;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
-	}
-
-	.navbar .icon {
-		width: 110rpx;
-		height: 110rpx;
-		border-radius: 50%;
-		position: relative;
-	}
-
-	.navbar image {
-		width: 70%;
-		height: 70%;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
-
-	.navbar text {
-		margin-top: 10rpx;
-		font-size: 30rpx;
-	}
-
-	.title {
-		font-size: 35rpx;
-	}
-
-	.title .colLine {
-		margin: auto 25rpx;
-		color: blue;
-		font-weight: bold;
-	}
-
-	.hotContent {
-		width: 94%;
-		height: 400rpx;
+	/* 扫一扫 */
+	.door {
+		width: 700rpx;
+		height: 180rpx;
 		margin: 25rpx auto;
-		position: relative;
-
-	}
-
-	.box {
-		border-radius: 15rpx;
-		position: absolute;
-	}
-
-	.box1 {
-		width: 49%;
-		height: 100%;
-
-	}
-
-	.box2 {
-		width: 48%;
-		height: 48%;
-		right: 0;
-	}
-
-	.box3 {
-		width: 48%;
-		height: 48%;
-		right: 0;
-		bottom: 0;
-	}
-
-
-	.box image {
-		width: 100%;
-		height: 100%;
-		border-radius: 15rpx;
-	}
-
-	.box .discribeTitle {
-		position: absolute;
-		font-size: 40rpx;
-		font-weight: 900;
-		color: #FF0000;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
-
-	.box .discribeDetail {
-		position: absolute;
-		color: #FF0000;
-		top: 230rpx;
-		left: 40rpx;
-	}
-
-	.notice {
-		margin-top: 50rpx;
-	}
-
-	.noticeContent {
-		background-color: white;
-		width: 94%;
-		height: 60rpx;
-		margin: 15rpx auto;
-		border-radius: 15rpx;
 		display: flex;
+		justify-content: center;
 		align-items: center;
-	}
+		border-radius: 10rpx;
+		background-color: white;
+		box-shadow: 5rpx 5rpx 5rpx rgba(0, 0, 0, 0.2), -3rpx 0rpx 5rpx rgba(0, 0, 0, 0.2);
 
-	.noticeContent image {
-		width: 50rpx;
-		height: 50Rpx;
-		margin: auto 10rpx;
+		image {
+			width: 100rpx;
+			height: 100rpx;
+			margin-right: 40rpx;
+		}
 	}
 </style>

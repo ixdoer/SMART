@@ -13,7 +13,7 @@
 					光照度: {{Light}}%
 				</view>
 				<view class="term">
-					温度: {{Temp}}'C 湿度: {{Humi}}%
+					温度: {{Temp}}℃ 湿度: {{Humi}}%
 				</view>
 			</view>
 		</view>
@@ -22,6 +22,7 @@
 				@tap="roomNub=index">
 				{{room}}
 			</view>
+			<text class="iconfont icon-jiahao"></text>
 		</view>
 
 		<view class="roomBar">
@@ -29,40 +30,48 @@
 
 				<!--扫一扫功能 -->
 				<view class="device scan">
-					<image src="../../static/images/扫一扫.png" mode=""></image>
+					<image src="../../static/images/shaoyishao.png" mode=""></image>
 					<text>扫一扫</text>
 				</view>
 
 				<!-- 客厅 -->
+				<!-- 灯光 -->
 				<view class="device light" v-for="(device,index) in devices" :key="index">
 					<view class="deviceStatus">
 						<image :src="device.status?device.onImgUrl:device.offImgUrl"></image>
 						<text>{{device.name}}</text>
 					</view>
 					<view class="switch">
-						<image class="switchImg" src="../../static/images/开关.png" mode=""></image>
+						<image class="switchImg" src="../../static/images/kaiguan.png" @click="device_switch(device.fun)">
+						</image>
 						<view class="online" v-if="device.isOnline">
-							<image class="onlineImg" src="../../static/images/点开.png" mode=""></image>
+							<image class="onlineImg" src="../../static/images/diankai.png" mode=""></image>
 							<text class="onlineTxt">在线</text>
 						</view>
 						<view class="online" v-else>
-							<image class="onlineImg" src="../../static/images/点关.png" mode=""></image>
+							<image class="onlineImg" src="../../static/images/dianguan.png" mode=""></image>
 							<text class="offlineTxt">离线</text>
 						</view>
 					</view>
 				</view>
+				<!-- 音乐 -->
+
 			</view>
 		</view>
 
 		<!-- 卧室 -->
-		<view class="bedroom" v-show="roomNub==1">			
+		<view class="bedroom" v-show="roomNub==1">
 			<remote-ctl class="remoteCtl"></remote-ctl>
 			<text>空调</text>
 		</view>
 
 		<!-- 厨房 -->
-		<view class="" v-show="roomNub==2">
-			C
+		<view class="kitchen" v-show="roomNub==2">
+			<view class="device scan">
+				<text class="alert">警报</text>
+				<image src="../../static/images/laba.png" mode=""></image>
+				<text>{{Alert}}</text>
+			</view>
 		</view>
 	</view>
 	</view>
@@ -86,6 +95,7 @@
 				Light: 0,
 				Led: false,
 				Beep: false,
+				Alert: '一切正常',
 
 				//房间编号
 				roomNub: 0,
@@ -94,31 +104,35 @@
 				//客厅设备
 				devices: [{
 						name: '吊灯',
-						status: true,
-						isOnline: true,
-						onImgUrl: '../../static/images/灯开.png',
-						offImgUrl: '../../static/images/灯关.png',
+						status: false,
+						isOnline: false,
+						onImgUrl: '../../static/images/dengkai.png',
+						offImgUrl: '../../static/images/dengguan.png',
+						fun: 'led_switch'
 					},
 					{
 						name: '音乐',
 						status: false,
-						isOnline: true,
-						onImgUrl: '../../static/images/音乐开.png',
-						offImgUrl: '../../static/images/音乐关.png',
+						isOnline: false,
+						onImgUrl: '../../static/images/yinyuekai.png',
+						offImgUrl: '../../static/images/yinyueguan.png',
+						fun: ''
 					},
 					{
 						name: '电视',
-						status: true,
+						status: false,
 						isOnline: false,
-						onImgUrl: '../../static/images/电视关.png',
-						offImgUrl: '../../static/images/电视关.png',
+						onImgUrl: '../../static/images/dianshiguan.png',
+						offImgUrl: '../../static/images/dianshikai.png',
+						fun: ''
 					},
 					{
 						name: '扫地机',
 						status: false,
 						isOnline: false,
 						onImgUrl: '',
-						offImgUrl: '../../static/images/扫地机.png',
+						offImgUrl: '../../static/images/shaodiji.png',
+						fun: ''
 					}
 				]
 			}
@@ -146,6 +160,7 @@
 				}
 				this.time = hours + ":" + minutes + ":" + seconds + " " + day_night;
 			}, 200);
+			this.connect();
 		},
 		methods: {
 			connect() {
@@ -188,41 +203,42 @@
 					self.Humi = msg.Humi;
 					self.Light = msg.Light;
 					self.Led = msg.Led;
-					self.Beep = msg.Beep;
+					//把led的状态传给组件						
+					self.devices[0].status = !self.Led;
+					//如果就接收到消息，说明设备上线
+					if (self.Led !== '') {
+						self.devices[0].isOnline = true;
+						self.devices[1].isOnline = true;
+					}
 				}).on('reconnect', function(topic, message) {
 					console.log("重连");
 				})
 			},
-
-			//控制开关
-			led_on() {
-				let self = this;
-				let qtt = {}; //定义消息（可以为字符串，对象等）	
-				qtt.LED_SW = 1;
-				//qtt.cmd = 1;
-				self.client.publish('ctrl', JSON.stringify(qtt), {
-					qos: 0,
-					retain: true
-				});
-				console.log("开灯");
+			device_switch(fun) {
+				this[fun]();
 			},
 			//控制开关
-			led_off() {
+			led_switch() {
 				let self = this;
-				let qtt = {}; //定义消息（可以为字符串，对象等）	
-				qtt.LED_SW = 0;
-				//qtt.cmd = 0;
+				//定义消息（即命令）
+				let qtt = {}; 
+				//通过传回LED状态，使之取反								
+				qtt.LED_SW = !self.devices[0].status;
+				//将消息发布到服务器
 				self.client.publish('ctrl', JSON.stringify(qtt), {
 					qos: 0,
 					retain: true
 				});
-				console.log("关灯");
-			}
+				console.log("开关灯");
+			}			
 		}
 	}
 </script>
 
 <style>
+	/*	引入字体图标	 */
+	@import url("../../static/css/iconfont.css");
+
 	page {
 		background-color: #efefef;
 	}
@@ -300,6 +316,14 @@
 
 	.selectBar {
 		background-color: white;
+		position: relative;
+	}
+
+	.selectBar .icon-jiahao {
+		font-size: 55rpx;
+		position: absolute;
+		right: 30rpx;
+		top: 30rpx;
 	}
 
 	/* 房间选项 */
@@ -314,8 +338,6 @@
 		color: #455d89;
 		border-bottom: 5rpx solid #364b8e;
 	}
-
-	.roomBar {}
 
 	.room {
 		display: flex;
@@ -410,5 +432,13 @@
 		width: 15%;
 		margin: 0 auto;
 		text-align: center;
+	}
+
+	.kitchen .alert {
+		display: inline-block;
+		font-size: 25rpx;
+		width: 20rpx;
+		color: red;
+		margin-right: 15rpx
 	}
 </style>

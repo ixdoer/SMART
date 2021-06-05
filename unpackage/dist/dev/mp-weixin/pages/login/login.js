@@ -213,7 +213,7 @@ var _default =
 
         setTimeout(function () {
           uni.switchTab({
-            url: "../control/control" });
+            url: "../home/home" });
 
         }, 1000);
         uni.setStorageSync("userName", this.userName);

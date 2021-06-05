@@ -1,1 +1,1 @@
-<view class="_div"></view>
+<view><view>{{'天气定位：'+address+''}}</view><view>{{'地理定位：'+addressName+''}}</view></view>

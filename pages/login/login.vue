@@ -32,39 +32,39 @@
 				passWord: ''
 			}
 		},
-		onLoad(options) {
-         console.log(options);
-		 //#ifdef APP-PLUS
-		 uni.login({
-		 	success:(res)=>{
-				uni.getUserInfo({
-					success: (info) => {
+		// onLoad(options) {
+		//   console.log(options);
+		//  //#ifdef APP-PLUS
+		//  uni.login({
+		//  	success:(res)=>{
+		// 		uni.getUserInfo({
+		// 			success: (info) => {
 						
-					},
-					fail() {
-						uni.showToast({
-							title:"无法获取用户信息",
-							icon:"none"
-						})
-					}
-				})
-			},
-			fail() {
-				uni.showToast({
-					title:"微信登录授权失败",
-					icon:"none"
-				})
-			}
-		 })
-		 //#endif
+		// 			},
+		// 			fail() {
+		// 				uni.showToast({
+		// 					title:"无法获取用户信息",
+		// 					icon:"none"
+		// 				})
+		// 			}
+		// 		})
+		// 	},
+		// 	fail() {
+		// 		uni.showToast({
+		// 			title:"微信登录授权失败",
+		// 			icon:"none"
+		// 		})
+		// 	}
+		//  })
+		//  //#endif
 		 
-		},
+		// },
 		methods: {
 			login() {
 				let userName = this.userName;
 				let passWord = this.passWord;
 
-				if (this.userName.trim() !== "Idoer" || this.passWord.trim() !== "123456") {
+				if (this.userName.trim() !== "智慧社区" || this.passWord.trim() !== "test") {
 					uni.showToast({
 						title: "用户不存在或密码错误！",
 						icon: "none"
@@ -76,7 +76,7 @@
 					});
 					setTimeout(() => {
 						uni.switchTab({
-							url: "../control/control"
+							url: "../community/community"
 						});						
 					}, 1000);
 					uni.setStorageSync("userName", this.userName);

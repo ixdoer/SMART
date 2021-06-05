@@ -157,41 +157,10 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default =
 {
   data: function data() {
     return {
-      logoUrl: "../../static/images/logo.png",
       items: [{
         text: "A",
         imageUrl: "../../static/images/community1.png" },
@@ -233,53 +202,10 @@ var _default =
       {
         text: '社区党建',
         url: '../partyBuilding/partyBuilding',
-        iconsrc: '../../static/images/党建.png' }],
-
-      hot: {
-        title: '热门推荐',
-        content: {
-          box1: {
-            headline: '买一送一',
-            detail: '今日秒杀，拼手速！' },
-
-          box2: {
-            headline: '高效保洁',
-            detail: '随时上门，随时约！' },
-
-          box3: {
-            headline: '衣物干洗',
-            detail: '上门取送，速度快！' } } },
+        iconsrc: '../../static/images/党建.png' }] };
 
 
-
-      notice: {
-        title: '社区公告',
-        content: [{
-          headline: '关于阳光小区疫情防控工作的通知',
-          article: '',
-          date: '' },
-
-        {
-          headline: '关于4月1日停电的通知',
-          article: '',
-          date: '' },
-
-        {
-          headline: '关于阳光小区社区乒乓球大赛的通知',
-          article: '',
-          date: '' }] } };
-
-
-
-
-  },
-  // onLoad: function() {
-  // 	loginRes = this.checkLogin('../community/community', 2);
-  // 	if (!loginRes) {
-  // 		return;
-  // 	}
-  // },
-  methods: {} };exports.default = _default;
+  } };exports.default = _default;
 
 /***/ }),
 

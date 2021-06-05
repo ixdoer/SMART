@@ -1,1 +1,1 @@
-<view><view class="inv-h-w"><view data-event-opts="{{[['tap',[['e0',['$event']]]]]}}" class="{{['inv-h',Inv==0?'inv-h-se':'']}}" bindtap="__e">选项卡1</view><view data-event-opts="{{[['tap',[['e1',['$event']]]]]}}" class="{{['inv-h',Inv==1?'inv-h-se':'']}}" bindtap="__e">我是选项卡二</view></view><view hidden="{{!(Inv==0)}}">我是选项卡一</view><view hidden="{{!(Inv==1)}}">我是选项卡二</view></view>
+<view class="_div"></view>

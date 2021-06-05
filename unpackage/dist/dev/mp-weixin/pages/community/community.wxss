@@ -57,13 +57,29 @@
 	margin-top: 10rpx;
 	font-size: 30rpx;
 }
-.title {
-	font-size: 35rpx;
+
+/* 扫一扫 */
+.door {
+	width: 700rpx;
+	height: 180rpx;
+	margin: 25rpx auto;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	border-radius: 10rpx;
+	background-color: white;
+	box-shadow: 5rpx 5rpx 5rpx rgba(0, 0, 0, 0.2), -3rpx 0rpx 5rpx rgba(0, 0, 0, 0.2);
 }
-.title .colLine {
-	margin: auto 25rpx;
-	color: blue;
-	font-weight: bold;
+.door image {
+	width: 100rpx;
+	height: 100rpx;
+	margin-right: 40rpx;
 }
 .hotContent {
 	width: 94%;
@@ -129,7 +145,7 @@
 }
 .noticeContent image {
 	width: 50rpx;
-	height: 50Rpx;
+	height: 50rpx;
 	margin: auto 10rpx;
 }
 

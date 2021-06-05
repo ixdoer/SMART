@@ -1,13 +1,13 @@
 
 .title {
-	margin-top: 70rpx;
+	margin:70rpx 0 0 30rpx;
 	font-size: 35rpx;
 }
 .colLine {
 	color: blue;
 	font-weight: bold;
 	display: inline-block;
-	margin: auto 20rpx;
+	margin-right: 20rpx;
 }
 .word {
 	margin-top: 15rpx;

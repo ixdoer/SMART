@@ -1,21 +1,22 @@
 <template>
 	<view class="title">
 		<text class="colLine">|</text>
-		<text class="word">{{title}}</text>
+		<text class="word">{{notice||dir.title}}</text>
 	</view>
 </template>
 
 <script>
 	export default {
 		props: {
-			title: String
+			dir: Object,
+			notice:String
 		}
 	}
 </script>
 
 <style>
 	.title {
-		margin-top: 70rpx;
+		margin:70rpx 0 0 30rpx;
 		font-size: 35rpx;
 	}
 
@@ -23,7 +24,7 @@
 		color: blue;
 		font-weight: bold;
 		display: inline-block;
-		margin: auto 20rpx;
+		margin-right: 20rpx;
 	}
 
 	.word {

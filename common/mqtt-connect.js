@@ -1,5 +1,6 @@
 connect() {
 	let self = this
+	//订阅的主题
 	let subscribe = "data"
 	let mqtt = require('mqtt/dist/mqtt.js')
 	// #ifdef H5  

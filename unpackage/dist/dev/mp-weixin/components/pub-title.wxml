@@ -1,1 +1,1 @@
-<view class="title"><text class="colLine">|</text><text class="word">{{title}}</text></view>
+<view class="title"><text class="colLine">|</text><text class="word">{{notice||dir.title}}</text></view>

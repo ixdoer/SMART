@@ -1,6 +1,6 @@
 {
   "enablePullDownRefresh": true,
-  "navigationStyle": "custom",
+  "navigationBarTitleText": "我的",
   "usingComponents": {
     "pub-title": "/components/pub-title"
   }
